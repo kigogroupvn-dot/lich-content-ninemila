@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light only">
+<title>Lịch content Ninemila</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Josefin+Sans:wght@400;600&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --choco:#380E00; --choco-deep:#2D0800; --orange:#F16100;
+  --amber-light:#F0C79C; --amber:#E8A35A; --grey:#E1DFE0; --grey-dark:#C8C6C9;
+  --ink:#2a1a14; --muted:#75655d; --line:#ebe6e3; --bg:#fff; --late:#C62828;
+  --nen:url(assets/nen-bia.jpg);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg)}
+body{background:var(--bg);color:var(--ink);font:400 15px/1.6 "Be Vietnam Pro",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+.label{font:600 11px/1 "Josefin Sans",sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+button{font:inherit}
+
+/* ── Bìa ── */
+.cover{position:relative;color:#fff;background:var(--choco-deep);overflow:hidden}
+.cover:before{content:"";position:absolute;inset:-40px;background:var(--nen) center/cover;opacity:.55;filter:blur(6px)}
+.cover:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(45,8,0,.94) 0%,rgba(45,8,0,.78) 55%,rgba(45,8,0,.35) 100%)}
+.cover .wrap{position:relative;z-index:1}
+.cover .top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:32px 0}
+.cover .top img{height:22px}
+.actions{display:flex;gap:8px}
+.btn{font:500 13px/1 "Be Vietnam Pro";color:#fff;border:1px solid rgba(255,255,255,.7);background:transparent;padding:11px 18px;border-radius:2px;text-decoration:none;cursor:pointer;transition:.2s;white-space:nowrap}
+.btn:hover{background:#fff;color:var(--choco)}
+.btn.solid{background:#fff;color:var(--choco);border-color:#fff}
+.btn.solid:hover{background:var(--amber-light);border-color:var(--amber-light)}
+.hero{display:grid;grid-template-columns:1fr 340px;gap:56px;align-items:end;padding:40px 0 64px}
+.kicker{font:600 12px/1 "Josefin Sans";letter-spacing:.32em;text-transform:uppercase;color:var(--amber-light);margin-bottom:22px}
+.cover h1{font:700 60px/1.06 "Philosopher",serif;letter-spacing:-.01em;margin-bottom:28px}
+.cover h1 em{display:block;font-style:italic;font-weight:400;color:var(--amber-light)}
+.meta{display:grid;grid-template-columns:110px 1fr;gap:12px 20px;max-width:560px;font-size:15px;color:rgba(255,255,255,.88)}
+.meta dt{color:rgba(240,199,156,.85);padding-top:4px}
+.product{position:relative;aspect-ratio:540/670;border:1px solid rgba(255,255,255,.85);padding:10px}
+.product img{width:100%;height:100%;object-fit:cover;display:block}
+.product span{position:absolute;left:-1px;bottom:22px;background:var(--orange);color:#fff;font:600 11px/1 "Josefin Sans";letter-spacing:.16em;text-transform:uppercase;padding:9px 14px}
+
+/* ── Dải số ── */
+.stats-band{background:var(--orange)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:28px 0 12px}
+.stat{border:1px solid rgba(255,255,255,.75);padding:20px 22px;color:#fff}
+.stat .v{display:flex;align-items:baseline;gap:14px}
+.stat b{font:700 46px/1 "Philosopher",serif}
+.stat b small{font-size:26px;opacity:.8}
+.stat span{font-size:14px;line-height:1.35}
+.bar{height:4px;background:rgba(255,255,255,.3);margin-top:14px}
+.bar i{display:block;height:100%;background:#fff;width:0;transition:width .6s}
+.sync{color:rgba(255,255,255,.9);font-size:12px;padding:0 0 16px}
+
+/* ── Section ── */
+.sec{padding:88px 0 0}
+.sec-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:24px;margin-bottom:32px}
+.sec-head .label{color:var(--orange);margin-bottom:12px;display:block}
+.sec-head h2{font:700 38px/1.1 "Philosopher",serif;color:var(--choco)}
+.sec-head h2 em{font-style:italic;font-weight:400}
+.sec-head p{color:var(--muted);font-size:14px;max-width:360px;text-align:right}
+
+/* ── Cơ cấu ── */
+.mix{background:#f4f2f3;border-top:1px solid var(--grey)}
+.mix-in{padding:44px 32px 52px}
+.mtab{width:100%;border-collapse:separate;border-spacing:6px;font-size:14px;margin:0 -6px}
+.mtab th{font:600 11px/1.3 "Josefin Sans";letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-align:center;padding:0 0 8px}
+.mtab th span{display:block;font:400 12px "Be Vietnam Pro";letter-spacing:0;text-transform:none;margin-top:5px}
+.mtab th:first-child{text-align:left}
+.mtab td{text-align:center;height:52px;border-radius:2px;font:700 20px/1 "Philosopher",serif;color:var(--choco);background:#fff}
+.mtab td:first-child{text-align:left;background:none;font:500 15px "Be Vietnam Pro";padding-left:0}
+.mtab td.z{color:var(--grey-dark);font:400 14px "Be Vietnam Pro"}
+.mtab td.h1{background:#fbe6d0}
+.mtab td.h2{background:var(--amber-light)}
+.mtab td.h3{background:var(--amber);color:#fff}
+.mtab td.sum{background:var(--choco);color:#fff}
+.mtab tr.tot td{background:none;border-top:1px solid var(--choco)}
+.mtab tr.tot td.sum{background:var(--orange);color:#fff}
+.legend{display:flex;gap:18px;align-items:center;margin-top:18px;font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:2px;vertical-align:-3px;margin-right:6px;border:1px solid var(--grey)}
+
+/* ── Bộ lọc ── */
+.filters{display:grid;grid-template-columns:90px 1fr;gap:10px 12px;align-items:center;margin-bottom:22px}
+.filters .label{font-size:10px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{background:#fff;border:1px solid var(--grey);border-radius:999px;padding:8px 15px;font:500 13px/1 "Be Vietnam Pro";color:var(--muted);cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:7px}
+.chip:hover{border-color:var(--choco);color:var(--choco)}
+.chip[aria-pressed=true]{border-color:var(--choco);background:var(--choco);color:#fff}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex:none}
+.s-chua{background:var(--grey-dark)} .s-dang{background:var(--amber)} .s-cho{background:var(--orange)} .s-lich{background:var(--choco)} .s-xong{background:#5b8c3a}
+.s-tre{background:var(--late)}
+
+/* ── Lịch ── */
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.cal .dow{font:600 11px/1 "Josefin Sans";letter-spacing:.18em;color:var(--muted);padding:0 4px 4px;text-transform:uppercase}
+.cal .wdir{grid-column:1/-1;display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:baseline;padding:30px 0 12px;border-bottom:1px solid var(--choco);margin-bottom:6px}
+.cal .wdir b{font:700 24px/1 "Philosopher",serif;color:var(--choco)}
+.cal .wdir b small{display:block;font:500 12px "Be Vietnam Pro";color:var(--orange);margin-top:8px}
+.cal .wdir p{font:italic 400 17px/1.5 "Philosopher",serif}
+.day{position:relative;min-height:186px;background:#faf9f9;border-radius:2px;padding:12px 12px 12px;text-align:left;color:inherit;display:flex;flex-direction:column;gap:7px;border:0}
+.day .n{font:700 15px/1 "Philosopher",serif;color:var(--grey-dark);display:flex;justify-content:space-between;align-items:center}
+.day.out{background:none}
+.day.past:not(button){background:#fcfcfc}
+.day.today{outline:2px solid var(--orange);outline-offset:2px}
+.today-tag{font:600 9px/1 "Josefin Sans";letter-spacing:.14em;text-transform:uppercase;background:var(--orange);color:#fff;padding:4px 6px;border-radius:2px}
+button.day{cursor:pointer;background:#fff;border:1px solid var(--grey);transition:transform .15s, box-shadow .15s}
+button.day:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(56,14,0,.10);border-color:var(--choco)}
+button.day .n{color:var(--choco)}
+button.day .grp{font:600 10px/1.25 "Josefin Sans";letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+button.day .tp{font:700 14.5px/1.35 "Philosopher",serif;color:var(--choco);display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+button.day .fm{margin-top:auto;font-size:11px;color:var(--muted);display:flex;align-items:center;gap:6px}
+button.day .st{font-size:11px;font-weight:600;color:var(--choco);display:flex;align-items:center;gap:6px;padding-top:7px;border-top:1px solid var(--line)}
+button.day .st:empty{display:none}
+.tick{width:16px;height:16px;border-radius:50%;background:var(--amber-light);color:var(--choco);font-size:10px;display:grid;place-items:center;font-weight:700;flex:none}
+button.day.reel{background:var(--choco);border-color:var(--choco)}
+button.day.reel .n,button.day.reel .tp,button.day.reel .st{color:#fff}
+button.day.reel .grp{color:var(--amber-light)}
+button.day.reel .fm{color:rgba(255,255,255,.7)}
+button.day.reel .fm:before{content:"";border-left:7px solid var(--amber-light);border-top:4.5px solid transparent;border-bottom:4.5px solid transparent}
+button.day.reel .st,button.day.sale .st{border-top-color:rgba(255,255,255,.2)}
+button.day.reel .s-lich{background:#fff}
+button.day.sale{background:var(--orange);border-color:var(--orange)}
+button.day.sale .n,button.day.sale .tp,button.day.sale .grp,button.day.sale .st{color:#fff}
+button.day.sale .fm{color:rgba(255,255,255,.85)}
+button.day.sale .s-cho{background:#fff}
+button.day.late{box-shadow:0 0 0 2px var(--late)}
+button.day.late .st{color:var(--late)}
+button.day.reel.late .st,button.day.sale.late .st{color:#fff}
+button.day.dim{opacity:.16}
+.list{display:none}
+
+/* ── Ngăn brief ── */
+.scrim{position:fixed;inset:0;background:rgba(45,8,0,.45);opacity:0;pointer-events:none;transition:opacity .2s;z-index:20}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(600px,100%);background:#fff;z-index:21;transform:translateX(100%);transition:transform .28s ease;display:flex;flex-direction:column;visibility:hidden}
+body.open .scrim{opacity:1;pointer-events:auto}
+body.open .drawer{transform:none;visibility:visible}
+.dr-top{background:var(--choco);color:#fff;padding:22px 32px 26px;position:relative;overflow:hidden;flex:none}
+.dr-top:before{content:"";position:absolute;inset:0;background:var(--nen) center/cover;opacity:.25}
+.dr-top > *{position:relative}
+.dr-nav{display:flex;align-items:center;gap:8px;margin-bottom:22px}
+.dr-nav .label{margin-right:auto;color:var(--amber-light)}
+.icon{width:34px;height:34px;border:1px solid rgba(255,255,255,.4);background:transparent;border-radius:2px;cursor:pointer;color:#fff;font-size:16px}
+.icon:hover{background:#fff;color:var(--choco)}
+.dr-meta{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;margin-bottom:10px}
+.dr-meta .no{font:700 34px/1 "Philosopher",serif;color:var(--amber-light)}
+.dr-meta .date{font-weight:600}
+.pill{font:600 10px/1 "Josefin Sans";letter-spacing:.16em;text-transform:uppercase;border:1px solid rgba(255,255,255,.55);padding:6px 9px;border-radius:2px}
+.dr-top h3{font:700 26px/1.28 "Philosopher",serif}
+.dr-scroll{overflow-y:auto;flex:1}
+.work{background:#faf7f5;border-bottom:1px solid var(--line);padding:20px 32px;display:grid;grid-template-columns:120px 1fr;gap:12px 16px;align-items:center}
+.k{font:600 10px/1 "Josefin Sans";letter-spacing:.18em;text-transform:uppercase;color:var(--orange)}
+.status{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--choco);font-size:14px}
+.status.late{color:var(--late)}
+.lnk{color:var(--choco);font-weight:500;text-decoration:underline;text-decoration-color:var(--amber);text-underline-offset:3px;word-break:break-all}
+.none{color:var(--grey-dark);font-size:14px}
+.tools{display:flex;gap:8px;padding:16px 32px;border-bottom:1px solid var(--line)}
+.tbtn{border:1px solid var(--grey);background:#fff;color:var(--choco);font:500 13px/1 "Be Vietnam Pro";padding:10px 14px;border-radius:2px;cursor:pointer}
+.tbtn:hover{border-color:var(--choco)}
+.dr-body{padding:24px 32px 56px}
+.post .k{display:block;margin:6px 0 12px}
+.post .goal{font:italic 400 18px/1.5 "Philosopher",serif;color:var(--choco);margin-bottom:26px;padding-left:16px;border-left:2px solid var(--amber)}
+.post ol{list-style:none;counter-reset:b}
+.post li{counter-increment:b;position:relative;padding:12px 0 12px 40px;border-top:1px solid var(--line)}
+.post li:before{content:counter(b,decimal-leading-zero);position:absolute;left:0;top:13px;font:700 14px/1.5 "Philosopher",serif;color:var(--amber)}
+.note{background:#f4f2f3;padding:14px 18px;font-size:14px;margin-top:14px;border-radius:2px}
+.note b{display:block;font:600 10px/1 "Josefin Sans";letter-spacing:.18em;text-transform:uppercase;color:var(--choco);margin-bottom:8px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:var(--choco);color:#fff;padding:12px 18px;border-radius:2px;font-size:14px;opacity:0;transition:.2s;z-index:30;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* ── Chân trang ── */
+.footer{margin-top:96px;background:var(--choco);color:rgba(255,255,255,.7);font-size:13px}
+.footer .wrap{display:flex;justify-content:space-between;align-items:center;padding:28px 32px}
+.footer img{height:16px}
+#print{display:none}
+
+@media (max-width:860px){
+  .wrap{padding:0 16px}
+  .cover .top{padding:20px 0}
+  .btn{padding:9px 12px;font-size:12px}
+  .btn.ghost-m{display:none}
+  .hero{grid-template-columns:1fr;gap:32px;padding:16px 0 40px}
+  .product{max-width:240px}
+  .cover h1{font-size:38px}
+  .cover:after{background:rgba(45,8,0,.82)}
+  .meta{grid-template-columns:1fr;gap:2px}
+  .meta dd{margin-bottom:10px}
+  .stats{grid-template-columns:1fr 1fr;gap:10px;padding:16px 0 10px}
+  .stat{padding:14px}
+  .stat .v{flex-direction:column;gap:6px}
+  .stat b{font-size:34px}
+  .sec{padding-top:56px}
+  .sec-head{grid-template-columns:1fr}
+  .sec-head h2{font-size:30px}
+  .sec-head p{text-align:left}
+  .mix-in{overflow-x:auto;padding:28px 16px}
+  .mtab{border-spacing:3px;font-size:12px}
+  .mtab td{height:40px;font-size:16px}
+  .mtab td:first-child{font-size:12px}
+  .mtab th span{display:none}
+  .filters{grid-template-columns:1fr;gap:8px}
+  .chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}
+  .chip{white-space:nowrap}
+  .cal{display:none}
+  .list{display:block}
+  .list .wkh{padding:28px 0 10px;border-bottom:1px solid var(--choco);margin-bottom:8px}
+  .list .wkh b{font:700 22px/1 "Philosopher",serif;color:var(--choco)}
+  .list .wkh span{font-size:12px;color:var(--orange);margin-left:8px}
+  .list .wkh p{font:italic 15px/1.5 "Philosopher",serif;margin-top:8px}
+  .list button{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--grey);border-radius:2px;margin-bottom:6px;padding:12px 14px;color:inherit;cursor:pointer}
+  .list button.reel{background:var(--choco);border-color:var(--choco);color:#fff}
+  .list button.sale{background:var(--orange);border-color:var(--orange);color:#fff}
+  .list button.late{box-shadow:0 0 0 2px var(--late)}
+  .list button.today{outline:2px solid var(--orange);outline-offset:2px}
+  .list button.dim{display:none}
+  .list .m{font-size:12px;opacity:.8;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .list .tp{font:700 16px/1.35 "Philosopher",serif;margin-top:4px}
+  .list button:not(.reel):not(.sale) .tp{color:var(--choco)}
+  .dr-top,.dr-body,.work,.tools{padding-left:20px;padding-right:20px}
+  .work{grid-template-columns:96px 1fr}
+  .footer .wrap{padding:22px 16px}
+}
+
+/* ── In / lưu PDF ── */
+@media print{
+  @page{size:A4;margin:16mm 14mm}
+  body > *:not(#print){display:none !important}
+  #print{display:block;font-size:11pt;color:#000}
+  #print h1{font:700 22pt/1.2 "Philosopher",serif;color:var(--choco)}
+  #print .pm{color:#555;margin:6px 0 18px;font-size:10pt}
+  #print .pw{font:700 15pt "Philosopher",serif;color:var(--choco);border-bottom:1.5px solid var(--choco);padding:14px 0 4px;margin-top:8px;break-after:avoid}
+  #print .pwd{font-style:italic;color:#333;margin:4px 0 8px;font-size:10pt}
+  #print .pp{break-inside:avoid;border-bottom:1px solid #ddd;padding:10px 0}
+  #print .ph{font-size:9pt;color:#555}
+  #print .ph b{color:var(--orange)}
+  #print h3{font:700 13pt/1.3 "Philosopher",serif;color:var(--choco);margin:3px 0 4px}
+  #print ul{margin:4px 0 4px 18px}
+  #print li{margin-bottom:2px}
+  #print .pn{font-size:9.5pt;color:#333;margin-top:3px}
+  #print .pl{font-size:9pt;color:#555;margin-top:3px;word-break:break-all}
+}
+</style>
+</head>
+<body>
+<header class="cover">
+  <div class="wrap">
+    <div class="top"><img src="assets/logo-white.png" alt="Ninemila">
+      <div class="actions"><button class="btn ghost-m" id="printBtn">In / lưu PDF</button><a class="btn solid" id="sheetBtn" target="_blank" rel="noopener" hidden>Mở Google Sheet ↗</a></div></div>
+    <div class="hero">
+      <div>
+        <div class="kicker" id="kicker">Content fanpage</div>
+        <h1 id="title"></h1>
+        <dl class="meta">
+          <dt class="label">Thời gian</dt><dd id="period"></dd>
+          <dt class="label">Trọng tâm</dt><dd id="focus"></dd>
+        </dl>
+      </div>
+      <div class="product"><img id="coverImg" src="assets/anh-bia.jpg" alt="Ảnh bìa Ninemila"><span>Calming Beer</span></div>
+    </div>
+  </div>
+</header>
+<div class="stats-band"><div class="wrap"><div class="stats" id="stats"></div><div class="sync" id="sync">Đang tải dữ liệu…</div></div></div>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="label">01 · Cơ cấu</span><h2>Cơ cấu <em>nội dung</em></h2></div><p>Số bài theo nhóm và theo tuần. Ô càng đậm, nhóm đó càng dày trong tuần.</p></div>
+  </div>
+  <div class="mix"><div class="wrap mix-in" id="mix"></div></div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="label">02 · Lịch</span><h2>Lịch <em>đăng bài</em></h2></div><p>Bấm vào một ngày để đọc brief. Ô nâu là Reel, ô cam là ưu đãi, viền đỏ là bài trễ.</p></div>
+    <div class="filters" id="filters"></div>
+    <div class="cal" id="cal"></div>
+    <div class="list" id="list"></div>
+  </div>
+</section>
+
+<footer class="footer"><div class="wrap"><img src="assets/logo-white.png" alt="Ninemila"><span>Khối Marketing · Kigo Group</span></div></footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true" role="dialog" aria-label="Brief bài đăng">
+  <div class="dr-top">
+    <div class="dr-nav"><span class="label" id="drLabel"></span>
+      <button class="icon" id="prev" aria-label="Bài trước">‹</button><button class="icon" id="next" aria-label="Bài sau">›</button><button class="icon" id="close" aria-label="Đóng">×</button></div>
+    <div id="drHead"></div>
+  </div>
+  <div class="dr-scroll" id="drScroll">
+    <div class="work" id="drWork"></div>
+    <div class="tools"><button class="tbtn" id="copyLink">Copy link bài</button><button class="tbtn" id="copyBrief">Copy brief</button></div>
+    <div class="dr-body" id="drBody"></div>
+  </div>
+</aside>
+<div class="toast" id="toast"></div>
+<div id="print"></div>
+
+<script src="config.js"></script>
+<script src="data.js"></script>
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const dd = n => String(n).padStart(2,'0');
+const safeUrl = u => /^https?:\/\//i.test(String(u||'').trim()) ? String(u).trim() : '';
+const STATUS = [['Chưa làm','s-chua'],['Đang làm','s-dang'],['Chờ duyệt','s-cho'],['Đã lên lịch','s-lich'],['Đã đăng','s-xong']];
+const GROUP_ORDER = ['KOC Reels','Sản phẩm','Hiệu quả & uy tín','Kênh chính hãng','Brand story','Ưu đãi'];
+const statusCls = s => (STATUS.find(x => x[0] === s) || [,'s-chua'])[1];
+const today = new Date(); today.setHours(0,0,0,0);
+
+let D = null, live = false, cur = 0, fGroup = 'Tất cả', fStatus = 'Tất cả';
+
+/* ---------- Dữ liệu ---------- */
+function parseCSV(t){
+  const rows = []; let row = [], f = '', q = false;
+  for (let i = 0; i < t.length; i++){
+    const c = t[i];
+    if (q){ if (c === '"'){ if (t[i+1] === '"'){ f += '"'; i++; } else q = false; } else f += c; }
+    else if (c === '"') q = true;
+    else if (c === ','){ row.push(f); f = ''; }
+    else if (c === '\n' || c === '\r'){ if (c === '\r' && t[i+1] === '\n') i++; row.push(f); rows.push(row); row = []; f = ''; }
+    else f += c;
+  }
+  if (f !== '' || row.length){ row.push(f); rows.push(row); }
+  return rows;
+}
+function parseDate(s, year){
+  s = String(s||'').trim(); let m;
+  if ((m = s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/))) return new Date(+m[1], m[2]-1, +m[3]);
+  if ((m = s.match(/^(\d{1,2})\/(\d{1,2})(?:\/(\d{2,4}))?$/))) { let y = m[3] ? +m[3] : year; if (y < 100) y += 2000; return new Date(y, m[2]-1, +m[1]); }
+  return null;
+}
+const lines = s => String(s||'').split(/\r?\n/).map(x => x.replace(/^[\s•●\-–]+/, '').trim()).filter(Boolean);
+function driveImg(u){
+  u = safeUrl(u); if (!u) return '';
+  const m = u.match(/\/d\/([\w-]{20,})/) || u.match(/[?&]id=([\w-]{20,})/);
+  return m ? `https://lh3.googleusercontent.com/d/${m[1]}=w1600` : u;
+}
+function fromFallback(){
+  const B = window.BRIEF, y = 2026;
+  return { meta:{ ...B.meta, year:y, cover:'', bg:'' }, weeks:B.weeks.map(w => ({...w})),
+    posts:B.posts.map(p => ({ no:p.no, date:parseDate(p.date, y), week:p.week, group:p.group, format:p.format, topic:p.topic, goal:p.goal,
+      bullets:p.bullets, notes:p.notes, status:'', media:'', link:'' })) };
+}
+async function fromSheet(url){
+  const id = (url.match(/\/d\/([\w-]{20,})/) || [])[1]; if (!id) throw new Error('Link Sheet không hợp lệ');
+  const get = name => fetch(`https://docs.google.com/spreadsheets/d/${id}/gviz/tq?tqx=out:csv&headers=1&sheet=${encodeURIComponent(name)}`, {cache:'no-store'})
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); }).then(t => parseCSV(t));
+  const [P, W, C] = await Promise.all([get('Bài đăng'), get('Tuần').catch(() => null), get('Cài đặt').catch(() => null)]);
+  const fb = fromFallback(), set = {};
+  (C || []).slice(1).forEach(r => { if (r[0]) set[r[0].trim()] = (r[1]||'').trim(); });
+  const year = +set['Năm'] || 2026;
+  // Đọc cột theo tên tiêu đề (không phụ thuộc thứ tự cột)
+  const norm = x => String(x||'').toLowerCase().normalize('NFC').trim();
+  const H = P[0].map(norm), col = name => H.findIndex(h => h.startsWith(norm(name)));
+  const C_ = { no:col('STT'), date:col('Ngày'), week:col('Tuần'), group:col('Nhóm'), format:col('Hình thức'), topic:col('Chủ đề'), goal:col('Mục tiêu'),
+    brief:col('Brief'), notes:col('Lưu ý'), status:col('Tình trạng'), media:col('Link media'), link:col('Link bài') };
+  if (C_.topic < 0 || C_.date < 0) throw new Error('Thiếu cột Ngày hoặc Chủ đề');
+  const v = (r, k) => C_[k] < 0 ? '' : String(r[C_[k]] ?? '').trim();
+  const posts = P.slice(1).filter(r => v(r,'topic') && parseDate(v(r,'date'), year)).map((r,i) => ({
+    no: v(r,'no') || dd(i+1), date: parseDate(v(r,'date'), year), week: +v(r,'week') || 0, group: v(r,'group') || 'Khác',
+    format: v(r,'format') || 'Ảnh đơn / Bộ ảnh', topic: v(r,'topic'), goal: v(r,'goal'), bullets: lines(v(r,'brief')),
+    notes: lines(v(r,'notes')).map(x => { const k = x.indexOf(':'); return k > 0 && k < 40 ? {label:x.slice(0,k).trim(), text:x.slice(k+1).trim()} : {label:'Lưu ý', text:x}; }),
+    status: v(r,'status') || 'Chưa làm', media: safeUrl(v(r,'media')), link: safeUrl(v(r,'link')) }));
+  if (!posts.length) throw new Error('Tab Bài đăng trống');
+  const weeks = W ? W.slice(1).filter(r => +r[0]).map(r => ({ n:+r[0], range:(r[1]||'').trim(), dir:(r[2]||'').trim() })) : fb.weeks;
+  return { meta:{ title:set['Tiêu đề'] || fb.meta.title, period:set['Thời gian'] || fb.meta.period, focus:set['Trọng tâm'] || fb.meta.focus,
+    year, cover:driveImg(set['Ảnh bìa']), bg:driveImg(set['Ảnh nền']) }, weeks, posts };
+}
+
+/* ---------- Hiển thị ---------- */
+const fmtDate = d => `${dd(d.getDate())}/${dd(d.getMonth()+1)}`;
+const kind = p => /reel/i.test(p.format) ? 'reel' : p.group === 'Ưu đãi' ? 'sale' : '';
+const isLate = p => live && p.status !== 'Đã đăng' && p.date < today;
+const isToday = d => d.getTime() === today.getTime();
+const groupsOf = ps => [...GROUP_ORDER.filter(g => ps.some(p => p.group === g)), ...[...new Set(ps.map(p => p.group))].filter(g => !GROUP_ORDER.includes(g))];
+function statusHTML(p){
+  if (!live) return '';
+  if (isLate(p)) return `<span class="dot s-tre"></span>Trễ · ${esc(p.status)}`;
+  if (p.status === 'Đã đăng') return `<span class="tick">✓</span>Đã đăng`;
+  return `<span class="dot ${statusCls(p.status)}"></span>${esc(p.status)}`;
+}
+
+function render(){
+  const P = D.posts; P.sort((a,b) => a.date - b.date); P.forEach((p,i) => p.i = i);
+  const G = groupsOf(P), weeks = D.weeks.length ? D.weeks : [...new Set(P.map(p => p.week))].map(n => ({n, range:'', dir:''}));
+
+  // Bìa
+  const t = D.meta.title, k = t.lastIndexOf('fanpage');
+  $('#title').innerHTML = k > 0 ? `${esc(t.slice(0,k))}<em>${esc(t.slice(k))}</em>` : esc(t);
+  $('#kicker').textContent = `Content fanpage · ${P.length} bài`;
+  $('#period').textContent = D.meta.period; $('#focus').textContent = D.meta.focus;
+  if (D.meta.cover) $('#coverImg').src = D.meta.cover;
+  if (D.meta.bg) document.documentElement.style.setProperty('--nen', `url("${D.meta.bg.replace(/"/g,'')}")`);
+
+  // Số liệu
+  const done = P.filter(p => p.status === 'Đã đăng').length, late = P.filter(isLate).length;
+  $('#stats').innerHTML = `
+    <div class="stat"><div class="v"><b>${P.length}</b><span>bài đăng</span></div></div>
+    <div class="stat"><div class="v"><b>${done}<small>/${P.length}</small></b><span>đã đăng${late ? ` · <strong>${late} trễ</strong>` : ''}</span></div><div class="bar"><i style="width:${P.length ? done/P.length*100 : 0}%"></i></div></div>
+    <div class="stat"><div class="v"><b>${P.filter(p => p.group === 'KOC Reels').length}</b><span>KOC Reels</span></div></div>
+    <div class="stat"><div class="v"><b>${G.length}</b><span>nhóm nội dung</span></div></div>`;
+
+  // Cơ cấu
+  const cnt = (w,g) => P.filter(p => p.week === w && p.group === g).length;
+  $('#mix').innerHTML = `<table class="mtab"><thead><tr><th>Nhóm</th>${weeks.map(w => `<th>Tuần ${w.n}<span>${esc(w.range)}</span></th>`).join('')}<th>Tổng</th></tr></thead><tbody>
+    ${G.map(g => `<tr><td>${esc(g)}</td>${weeks.map(w => { const n = cnt(w.n,g); return n ? `<td class="h${Math.min(n,3)}">${n}</td>` : '<td class="z">–</td>'; }).join('')}<td class="sum">${P.filter(p => p.group === g).length}</td></tr>`).join('')}
+    <tr class="tot"><td>Tổng</td>${weeks.map(w => `<td>${P.filter(p => p.week === w.n).length}</td>`).join('')}<td class="sum">${P.length}</td></tr></tbody></table>
+    <div class="legend"><span><i style="background:#fbe6d0"></i>1 bài</span><span><i style="background:var(--amber-light)"></i>2 bài</span><span><i style="background:var(--amber)"></i>3 bài trở lên</span></div>`;
+
+  // Bộ lọc
+  const chip = (type, v, label, extra='') => `<button class="chip" data-type="${type}" data-v="${esc(v)}" aria-pressed="${(type==='g'?fGroup:fStatus)===v}">${extra}${esc(label)}</button>`;
+  $('#filters').innerHTML = `<span class="label">Nhóm</span><div class="chips">${chip('g','Tất cả','Tất cả')}${G.map(g => chip('g', g, `${g} · ${P.filter(p => p.group === g).length}`)).join('')}</div>`
+    + (live ? `<span class="label">Tình trạng</span><div class="chips">${chip('s','Tất cả','Tất cả')}${STATUS.map(([s,c]) => chip('s', s, `${s} · ${P.filter(p => p.status === s).length}`, `<span class="dot ${c}"></span>`)).join('')}${late ? chip('s','Trễ',`Trễ · ${late}`,'<span class="dot s-tre"></span>') : ''}</div>` : '');
+
+  // Lịch: hàng = tuần, bắt đầu từ ngày đăng đầu tiên
+  const start = new Date(P[0].date), end = P[P.length-1].date;
+  const dow = ['CN','T2','T3','T4','T5','T6','T7'];
+  const byKey = {}; P.forEach(p => (byKey[p.date.getTime()] ||= []).push(p));
+  const rows = Math.ceil(((end - start) / 864e5 + 1) / 7);
+  let c = [...Array(7)].map((_,k) => `<div class="dow">${dow[(start.getDay()+k)%7]}</div>`).join(''), list = '';
+  for (let r = 0; r < rows; r++){
+    const w = weeks[r] || {n:r+1, range:'', dir:''};
+    c += `<div class="wdir"><b>Tuần ${w.n}<small>${esc(w.range)}</small></b><p>${esc(w.dir)}</p></div>`;
+    list += `<div class="wkh"><b>Tuần ${w.n}</b><span>${esc(w.range)}</span><p>${esc(w.dir)}</p></div>`;
+    for (let k = 0; k < 7; k++){
+      const d = new Date(start); d.setDate(start.getDate() + r*7 + k);
+      const tdy = isToday(d), tag = tdy ? '<span class="today-tag">Hôm nay</span>' : '';
+      if (d > end){ c += `<div class="day out${tdy?' today':''}"></div>`; continue; }
+      const ps = byKey[d.getTime()];
+      if (!ps){ c += `<div class="day${d < today ? ' past' : ''}${tdy ? ' today' : ''}"><span class="n">${d.getDate()}${tag}</span></div>`; continue; }
+      ps.forEach(p => {
+        const cls = [kind(p), isLate(p) && 'late', tdy && 'today'].filter(Boolean).join(' ');
+        c += `<button class="day ${cls}" data-i="${p.i}"><span class="n">${d.getDate()}${tag}</span>
+          <span class="grp">${esc(p.group)}</span><span class="tp">${esc(p.topic)}</span><span class="fm">${esc(p.format)}</span><span class="st">${statusHTML(p)}</span></button>`;
+        list += `<button class="${cls}" data-i="${p.i}"><div class="m"><b>${fmtDate(p.date)}</b> · ${esc(p.group)} · ${esc(p.format)}${tdy ? ' · Hôm nay' : ''}</div><div class="tp">${esc(p.topic)}</div>${live ? `<div class="m" style="margin-top:6px">${statusHTML(p)}</div>` : ''}</button>`;
+      });
+    }
+  }
+  $('#cal').innerHTML = c; $('#list').innerHTML = list;
+  applyFilter(); renderPrint(weeks);
+}
+
+function applyFilter(){
+  document.querySelectorAll('[data-i]').forEach(x => {
+    const p = D.posts[+x.dataset.i];
+    const okG = fGroup === 'Tất cả' || p.group === fGroup;
+    const okS = fStatus === 'Tất cả' || (fStatus === 'Trễ' ? isLate(p) : p.status === fStatus);
+    x.classList.toggle('dim', !(okG && okS));
+  });
+}
+$('#filters').onclick = e => {
+  const b = e.target.closest('.chip'); if (!b) return;
+  if (b.dataset.type === 'g') fGroup = b.dataset.v; else fStatus = b.dataset.v;
+  b.parentNode.querySelectorAll('.chip').forEach(x => x.setAttribute('aria-pressed', x === b));
+  applyFilter();
+};
+document.addEventListener('click', e => { const b = e.target.closest('#cal [data-i], #list [data-i]'); if (b) openPost(+b.dataset.i); });
+
+/* ---------- Ngăn brief ---------- */
+const postId = p => 'bai-' + p.no;
+function openPost(i){
+  const P = D.posts; cur = (i + P.length) % P.length; const p = P[cur];
+  $('#drLabel').textContent = `Bài ${p.no} / ${P.length}`;
+  $('#drHead').innerHTML = `<div class="dr-meta"><span class="no">${esc(p.no)}</span><span class="date">${fmtDate(p.date)} · Tuần ${p.week}</span><span class="pill">${esc(p.group)}</span><span class="pill">${esc(p.format)}</span></div><h3>${esc(p.topic)}</h3>`;
+  const link = (u, t) => u ? `<a class="lnk" href="${esc(u)}" target="_blank" rel="noopener">${t} ↗</a>` : '<span class="none">Chưa có</span>';
+  $('#drWork').innerHTML = live
+    ? `<span class="k">Tình trạng</span><span class="status${isLate(p) ? ' late' : ''}">${statusHTML(p)}</span>
+       <span class="k">Media</span>${link(p.media, 'Mở thư mục media')}
+       <span class="k">Bài đã đăng</span>${link(p.link, 'Xem bài đã đăng')}`
+    : `<span class="k">Tiến độ</span><span class="none">Chưa kết nối Google Sheet</span>`;
+  $('#drBody').innerHTML = `<article class="post">
+    ${p.goal ? `<span class="k">Mục tiêu</span><p class="goal">${esc(p.goal)}</p>` : ''}
+    ${p.bullets.length ? `<span class="k">Brief triển khai</span><ol>${p.bullets.map(b => `<li>${esc(b)}</li>`).join('')}</ol>` : ''}
+    ${p.notes.map(n => `<div class="note"><b>${esc(n.label)}</b>${esc(n.text)}</div>`).join('')}</article>`;
+  $('#drScroll').scrollTop = 0;
+  document.body.classList.add('open'); $('#drawer').setAttribute('aria-hidden','false');
+  history.replaceState(null, '', '#' + postId(p));
+}
+function closeDr(){ document.body.classList.remove('open'); $('#drawer').setAttribute('aria-hidden','true'); history.replaceState(null, '', location.pathname + location.search); }
+$('#close').onclick = closeDr; $('#scrim').onclick = closeDr;
+$('#prev').onclick = () => openPost(cur - 1); $('#next').onclick = () => openPost(cur + 1);
+document.addEventListener('keydown', e => {
+  if (!document.body.classList.contains('open')) return;
+  if (e.key === 'Escape') closeDr(); if (e.key === 'ArrowLeft') openPost(cur - 1); if (e.key === 'ArrowRight') openPost(cur + 1);
+});
+
+function toast(t){ const el = $('#toast'); el.textContent = t; el.classList.add('on'); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove('on'), 1800); }
+async function copy(text, msg){
+  try { await navigator.clipboard.writeText(text); }
+  catch { const a = document.createElement('textarea'); a.value = text; document.body.appendChild(a); a.select(); document.execCommand('copy'); a.remove(); }
+  toast(msg);
+}
+function briefText(p){
+  return [`Bài ${p.no} · ${fmtDate(p.date)}/${p.date.getFullYear()} · ${p.group} · ${p.format}`, `Chủ đề: ${p.topic}`, p.goal && `Mục tiêu: ${p.goal}`,
+    p.bullets.length && 'Brief triển khai:\n' + p.bullets.map(b => '- ' + b).join('\n'), ...p.notes.map(n => `${n.label}: ${n.text}`),
+    p.media && `Link media: ${p.media}`, p.link && `Bài đã đăng: ${p.link}`].filter(Boolean).join('\n\n');
+}
+$('#copyLink').onclick = () => copy(location.href.split('#')[0] + '#' + postId(D.posts[cur]), 'Đã copy link bài');
+$('#copyBrief').onclick = () => copy(briefText(D.posts[cur]), 'Đã copy brief');
+
+/* ---------- In ---------- */
+function renderPrint(weeks){
+  const P = D.posts;
+  $('#print').innerHTML = `<h1>${esc(D.meta.title)}</h1><div class="pm">${esc(D.meta.period)} · ${P.length} bài · ${esc(D.meta.focus)}</div>` +
+    weeks.map(w => `<div class="pw">Tuần ${w.n} · ${esc(w.range)}</div><div class="pwd">${esc(w.dir)}</div>` +
+      P.filter(p => p.week === w.n).map(p => `<div class="pp"><div class="ph"><b>${esc(p.no)}</b> · ${fmtDate(p.date)} · ${esc(p.group)} · ${esc(p.format)}${live ? ' · ' + esc(p.status) : ''}</div>
+        <h3>${esc(p.topic)}</h3>${p.goal ? `<div><b>Mục tiêu:</b> ${esc(p.goal)}</div>` : ''}<ul>${p.bullets.map(b => `<li>${esc(b)}</li>`).join('')}</ul>
+        ${p.notes.map(n => `<div class="pn"><b>${esc(n.label)}:</b> ${esc(n.text)}</div>`).join('')}
+        ${p.media ? `<div class="pl">Media: ${esc(p.media)}</div>` : ''}${p.link ? `<div class="pl">Bài đã đăng: ${esc(p.link)}</div>` : ''}</div>`).join('')).join('');
+}
+$('#printBtn').onclick = () => window.print();
+
+/* ---------- Khởi động ---------- */
+(async () => {
+  const url = safeUrl((window.CONFIG || {}).sheetUrl);
+  if (url){ const b = $('#sheetBtn'); b.href = url; b.hidden = false; }
+  D = fromFallback(); render();
+  if (url){
+    try {
+      D = await fromSheet(url); live = true; render();
+      const n = new Date(); $('#sync').textContent = `Cập nhật từ Google Sheet lúc ${dd(n.getHours())}:${dd(n.getMinutes())}. Tải lại trang để xem dữ liệu mới nhất.`;
+    } catch (e) { $('#sync').textContent = 'Không tải được Google Sheet, đang hiện bản lưu sẵn (chưa có tình trạng và link).'; }
+  } else $('#sync').textContent = 'Chưa kết nối Google Sheet, đang hiện bản lưu sẵn.';
+  const h = location.hash.match(/^#bai-(.+)$/);
+  if (h){ const p = D.posts.find(x => x.no === decodeURIComponent(h[1])); if (p) openPost(p.i); }
+})();
+</script>
+</body>
+</html>
