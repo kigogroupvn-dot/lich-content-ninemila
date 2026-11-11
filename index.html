@@ -131,8 +131,25 @@ button.day.sale .s-cho{background:#fff}
 button.day.late{box-shadow:0 0 0 2px var(--late)}
 button.day.late .st{color:var(--late)}
 button.day.reel.late .st,button.day.sale.late .st{color:#fff}
-button.day.dim{opacity:.16}
 .list{display:none}
+
+
+/* ── Chú thích & trạng thái lọc ── */
+.keys{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:6px;font-size:13px;color:var(--ink)}
+.keys > span{display:inline-flex;align-items:center;gap:8px}
+.sw{width:22px;height:16px;border-radius:2px;border:1px solid var(--grey);background:#fff;display:inline-block;flex:none}
+.sw.reel{background:var(--choco);border-color:var(--choco)} .sw.sale{background:var(--orange);border-color:var(--orange)}
+.sw.late{box-shadow:0 0 0 2px var(--late);border-color:#fff} .sw.today{outline:2px solid var(--orange);outline-offset:2px}
+.fbar{display:none;align-items:center;gap:12px;flex-wrap:wrap;background:#fff3ea;border-left:3px solid var(--orange);padding:12px 16px;margin-bottom:14px;font-size:14px;color:var(--choco)}
+.fbar.on{display:flex}
+.fbar b{font-weight:700}
+.fbar button{margin-left:auto;border:1px solid var(--choco);background:#fff;color:var(--choco);padding:7px 12px;border-radius:2px;cursor:pointer;font:500 13px "Be Vietnam Pro"}
+.fbar button:hover{background:var(--choco);color:#fff}
+/* Khi đang lọc: bài khớp nổi bật, phần còn lại chìm hẳn */
+.cal.filtering .day:not(.hit){opacity:.35}
+.cal.filtering button.day:not(.hit){opacity:.12;filter:grayscale(1)}
+button.day.hit{box-shadow:0 0 0 3px var(--orange),0 12px 26px rgba(56,14,0,.18);transform:translateY(-3px);z-index:1}
+button.day.hit.late{box-shadow:0 0 0 3px var(--late),0 12px 26px rgba(56,14,0,.18)}
 
 /* ── Ngăn brief ── */
 .scrim{position:fixed;inset:0;background:rgba(45,8,0,.45);opacity:0;pointer-events:none;transition:opacity .2s;z-index:20}
@@ -217,6 +234,8 @@ body.open .drawer{transform:none;visibility:visible}
   .list button.late{box-shadow:0 0 0 2px var(--late)}
   .list button.today{outline:2px solid var(--orange);outline-offset:2px}
   .list button.dim{display:none}
+  .list.filtering button.hit{box-shadow:0 0 0 2px var(--orange)}
+  .keys{gap:8px 14px;font-size:12px}
   .list .m{font-size:12px;opacity:.8;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
   .list .tp{font:700 16px/1.35 "Philosopher",serif;margin-top:4px}
   .list button:not(.reel):not(.sale) .tp{color:var(--choco)}
@@ -274,8 +293,10 @@ body.open .drawer{transform:none;visibility:visible}
 
 <section class="sec">
   <div class="wrap">
-    <div class="sec-head"><div><span class="label">02 · Lịch</span><h2>Lịch <em>đăng bài</em></h2></div><p>Bấm vào một ngày để đọc brief. Ô nâu là Reel, ô cam là ưu đãi, viền đỏ là bài trễ.</p></div>
+    <div class="sec-head"><div><span class="label">02 · Lịch</span><h2>Lịch <em>đăng bài</em></h2></div><p>Bấm vào một ô để xem brief đầy đủ của bài.</p></div>
     <div class="filters" id="filters"></div>
+    <div class="fbar" id="fbar"></div>
+    <div class="keys" id="keys"></div>
     <div class="cal" id="cal"></div>
     <div class="list" id="list"></div>
   </div>
@@ -416,6 +437,10 @@ function render(){
   $('#filters').innerHTML = `<span class="label">Nhóm</span><div class="chips">${chip('g','Tất cả','Tất cả')}${G.map(g => chip('g', g, `${g} · ${P.filter(p => p.group === g).length}`)).join('')}</div>`
     + (live ? `<span class="label">Tình trạng</span><div class="chips">${chip('s','Tất cả','Tất cả')}${STATUS.map(([s,c]) => chip('s', s, `${s} · ${P.filter(p => p.status === s).length}`, `<span class="dot ${c}"></span>`)).join('')}${late ? chip('s','Trễ',`Trễ · ${late}`,'<span class="dot s-tre"></span>') : ''}</div>` : '');
 
+  $('#keys').innerHTML = `<span class="label" style="font-size:10px">Chú thích</span>
+    <span><i class="sw reel"></i>Reel (video)</span><span><i class="sw sale"></i>Ưu đãi</span><span><i class="sw"></i>Ảnh đơn / Bộ ảnh</span>
+    ${live ? '<span><i class="sw late"></i>Quá ngày đăng mà chưa đăng</span>' : ''}<span><i class="sw today"></i>Hôm nay</span>`;
+
   // Lịch: hàng = tuần, bắt đầu từ ngày đăng đầu tiên
   const start = new Date(P[0].date), end = P[P.length-1].date;
   const dow = ['CN','T2','T3','T4','T5','T6','T7'];
@@ -445,13 +470,21 @@ function render(){
 }
 
 function applyFilter(){
+  const on = fGroup !== 'Tất cả' || fStatus !== 'Tất cả'; let n = 0;
   document.querySelectorAll('[data-i]').forEach(x => {
     const p = D.posts[+x.dataset.i];
     const okG = fGroup === 'Tất cả' || p.group === fGroup;
     const okS = fStatus === 'Tất cả' || (fStatus === 'Trễ' ? isLate(p) : p.status === fStatus);
-    x.classList.toggle('dim', !(okG && okS));
+    const hit = on && okG && okS; if (hit && x.closest('#cal')) n++;
+    x.classList.toggle('hit', hit); x.classList.toggle('dim', on && !hit);
   });
+  $('#cal').classList.toggle('filtering', on); $('#list').classList.toggle('filtering', on);
+  const what = [fGroup !== 'Tất cả' && fGroup, fStatus !== 'Tất cả' && fStatus].filter(Boolean).join(' + ');
+  $('#fbar').classList.toggle('on', on);
+  $('#fbar').innerHTML = on ? `<span>Đang lọc: <b>${esc(what)}</b> · ${n} bài</span><button type="button" id="clearF">× Bỏ lọc</button>` : '';
 }
+document.addEventListener('click', e => { if (e.target.id === 'clearF'){ fGroup = fStatus = 'Tất cả';
+  document.querySelectorAll('#filters .chip').forEach(x => x.setAttribute('aria-pressed', x.dataset.v === 'Tất cả')); applyFilter(); } });
 $('#filters').onclick = e => {
   const b = e.target.closest('.chip'); if (!b) return;
   if (b.dataset.type === 'g') fGroup = b.dataset.v; else fStatus = b.dataset.v;
