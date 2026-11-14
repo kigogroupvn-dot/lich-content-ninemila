@@ -1,0 +1,245 @@
+/* Lịch & brief content fanpage Ninemila · giao diện dùng chung (trang gốc + web IMC). Mọi style nằm trong .lich */
+.lich{
+  --choco:#380E00; --choco-deep:#2D0800; --orange:#F16100;
+  --amber-light:#F0C79C; --amber:#E8A35A; --grey:#E1DFE0; --grey-dark:#C8C6C9;
+  --ink:#2a1a14; --muted:#75655d; --line:#ebe6e3; --bg:#fff; --late:#C62828;
+  --nen:url(assets/nen-bia.jpg);
+}
+.lich, .lich *{box-sizing:border-box;margin:0;padding:0}
+.lich{background:var(--bg)}
+.lich{background:var(--bg);color:var(--ink);font:400 15px/1.6 "Be Vietnam Pro",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.lich a{color:inherit}
+.lich .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+.lich .label{font:600 11px/1 "Josefin Sans",sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.lich button{font:inherit}
+.lich .cover{position:relative;color:#fff;background:var(--choco-deep);overflow:hidden}
+.lich .cover:before{content:"";position:absolute;inset:0;background:var(--nen) center/cover;opacity:.9}
+.lich .cover:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(45,8,0,.94) 0%,rgba(45,8,0,.72) 48%,rgba(45,8,0,.15) 100%)}
+.lich .cover .wrap{position:relative;z-index:1}
+.lich .cover .top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:32px 0}
+.lich .cover .top img{height:22px}
+.lich .actions{display:flex;gap:8px}
+.lich .btn{font:500 13px/1 "Be Vietnam Pro";color:#fff;border:1px solid rgba(255,255,255,.7);background:transparent;padding:11px 18px;border-radius:2px;text-decoration:none;cursor:pointer;transition:.2s;white-space:nowrap}
+.lich .btn:hover{background:#fff;color:var(--choco)}
+.lich .btn.solid{background:#fff;color:var(--choco);border-color:#fff}
+.lich .btn.solid:hover{background:var(--amber-light);border-color:var(--amber-light)}
+.lich .hero{display:grid;grid-template-columns:1fr 340px;gap:56px;align-items:end;padding:40px 0 64px}
+.lich .kicker{font:600 12px/1 "Josefin Sans";letter-spacing:.32em;text-transform:uppercase;color:var(--amber-light);margin-bottom:22px}
+.lich .cover h1{font:700 60px/1.06 "Philosopher",serif;letter-spacing:-.01em;margin-bottom:28px}
+.lich .cover h1 em{display:block;font-style:italic;font-weight:400;color:var(--amber-light)}
+.lich .meta{display:grid;grid-template-columns:110px 1fr;gap:12px 20px;max-width:560px;font-size:15px;color:rgba(255,255,255,.88)}
+.lich .meta dt{color:rgba(240,199,156,.85);padding-top:4px}
+.lich .product{position:relative;aspect-ratio:540/670;border:1px solid rgba(255,255,255,.85);padding:10px}
+.lich .product img{width:100%;height:100%;object-fit:cover;display:block}
+.lich .product span{position:absolute;left:-1px;bottom:22px;background:var(--orange);color:#fff;font:600 11px/1 "Josefin Sans";letter-spacing:.16em;text-transform:uppercase;padding:9px 14px}
+.lich .stats-band{background:var(--orange)}
+.lich .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:28px 0 12px}
+.lich .stat{border:1px solid rgba(255,255,255,.75);padding:20px 22px;color:#fff}
+.lich .stat .v{display:flex;align-items:baseline;gap:14px}
+.lich .stat b{font:700 46px/1 "Philosopher",serif}
+.lich .stat b small{font-size:26px;opacity:.8}
+.lich .stat span{font-size:14px;line-height:1.35}
+.lich .bar{height:4px;background:rgba(255,255,255,.3);margin-top:14px}
+.lich .bar i{display:block;height:100%;background:#fff;width:0;transition:width .6s}
+.lich .sync{color:rgba(255,255,255,.9);font-size:12px;padding:0 0 16px}
+.lich .sec{padding:88px 0 0}
+.lich .sec-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:24px;margin-bottom:32px}
+.lich .sec-head .label{color:var(--orange);margin-bottom:12px;display:block}
+.lich .sec-head h2{font:700 38px/1.1 "Philosopher",serif;color:var(--choco)}
+.lich .sec-head h2 em{font-style:italic;font-weight:400}
+.lich .sec-head p{color:var(--muted);font-size:14px;max-width:360px;text-align:right}
+.lich .mix{background:#f4f2f3;border-top:1px solid var(--grey)}
+.lich .mix-in{padding:44px 32px 52px}
+.lich .mtab{width:100%;border-collapse:separate;border-spacing:6px;font-size:14px;margin:0 -6px}
+.lich .mtab th{font:600 11px/1.3 "Josefin Sans";letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-align:center;padding:0 0 8px}
+.lich .mtab th span{display:block;font:400 12px "Be Vietnam Pro";letter-spacing:0;text-transform:none;margin-top:5px}
+.lich .mtab th:first-child{text-align:left}
+.lich .mtab td{text-align:center;height:52px;border-radius:2px;font:700 20px/1 "Philosopher",serif;color:var(--choco);background:#fff}
+.lich .mtab td:first-child{text-align:left;background:none;font:500 15px "Be Vietnam Pro";padding-left:0}
+.lich .mtab td.z{color:var(--grey-dark);font:400 14px "Be Vietnam Pro"}
+.lich .mtab td.h1{background:#fbe6d0}
+.lich .mtab td.h2{background:var(--amber-light)}
+.lich .mtab td.h3{background:var(--amber);color:#fff}
+.lich .mtab td.sum{background:var(--choco);color:#fff}
+.lich .mtab tr.tot td{background:none;border-top:1px solid var(--choco)}
+.lich .mtab tr.tot td.sum{background:var(--orange);color:#fff}
+.lich .legend{display:flex;gap:18px;align-items:center;margin-top:18px;font-size:12px;color:var(--muted)}
+.lich .legend i{display:inline-block;width:14px;height:14px;border-radius:2px;vertical-align:-3px;margin-right:6px;border:1px solid var(--grey)}
+.lich .filters{display:grid;grid-template-columns:90px 1fr;gap:10px 12px;align-items:center;margin-bottom:22px}
+.lich .filters .label{font-size:10px}
+.lich .chips{display:flex;gap:6px;flex-wrap:wrap}
+.lich .chip{background:#fff;border:1px solid var(--grey);border-radius:999px;padding:8px 15px;font:500 13px/1 "Be Vietnam Pro";color:var(--muted);cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:7px}
+.lich .chip:hover{border-color:var(--choco);color:var(--choco)}
+.lich .chip[aria-pressed=true]{border-color:var(--choco);background:var(--choco);color:#fff}
+.lich .dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex:none}
+.lich .s-chua{background:var(--grey-dark)}
+.lich .s-dang{background:var(--amber)}
+.lich .s-cho{background:var(--orange)}
+.lich .s-lich{background:var(--choco)}
+.lich .s-xong{background:#5b8c3a}
+.lich .s-tre{background:var(--late)}
+.lich .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.lich .cal .dow{font:600 11px/1 "Josefin Sans";letter-spacing:.18em;color:var(--muted);padding:0 4px 4px;text-transform:uppercase}
+.lich .cal .wdir{grid-column:1/-1;display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:baseline;padding:30px 0 12px;border-bottom:1px solid var(--choco);margin-bottom:6px}
+.lich .cal .wdir b{font:700 24px/1 "Philosopher",serif;color:var(--choco)}
+.lich .cal .wdir b small{display:block;font:500 12px "Be Vietnam Pro";color:var(--orange);margin-top:8px}
+.lich .cal .wdir p{font:italic 400 17px/1.5 "Philosopher",serif}
+.lich .day{position:relative;min-height:186px;background:#faf9f9;border-radius:2px;padding:12px 12px 12px;text-align:left;color:inherit;display:flex;flex-direction:column;gap:7px;border:0}
+.lich .day .n{font:700 15px/1 "Philosopher",serif;color:var(--grey-dark);display:flex;justify-content:space-between;align-items:center}
+.lich .day.out{background:none}
+.lich .day.past:not(button){background:#fcfcfc}
+.lich .day.today{outline:2px solid var(--orange);outline-offset:2px}
+.lich .today-tag{font:600 9px/1 "Josefin Sans";letter-spacing:.14em;text-transform:uppercase;background:var(--orange);color:#fff;padding:4px 6px;border-radius:2px}
+.lich button.day{cursor:pointer;background:#fff;border:1px solid var(--grey);transition:transform .15s, box-shadow .15s}
+.lich button.day:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(56,14,0,.10);border-color:var(--choco)}
+.lich button.day .n{color:var(--choco)}
+.lich button.day .grp{font:600 10px/1.25 "Josefin Sans";letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+.lich button.day .tp{font:700 14.5px/1.35 "Philosopher",serif;color:var(--choco);display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.lich button.day .fm{margin-top:auto;font-size:11px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.lich button.day .st{font-size:11px;font-weight:600;color:var(--choco);display:flex;align-items:center;gap:6px;padding-top:7px;border-top:1px solid var(--line)}
+.lich button.day .st:empty{display:none}
+.lich .tick{width:16px;height:16px;border-radius:50%;background:var(--amber-light);color:var(--choco);font-size:10px;display:grid;place-items:center;font-weight:700;flex:none}
+.lich button.day.reel{background:var(--choco);border-color:var(--choco)}
+.lich button.day.reel .n, .lich button.day.reel .tp, .lich button.day.reel .st{color:#fff}
+.lich button.day.reel .grp{color:var(--amber-light)}
+.lich button.day.reel .fm{color:rgba(255,255,255,.7)}
+.lich button.day.reel .fm:before{content:"";border-left:7px solid var(--amber-light);border-top:4.5px solid transparent;border-bottom:4.5px solid transparent}
+.lich button.day.reel .st, .lich button.day.sale .st{border-top-color:rgba(255,255,255,.2)}
+.lich button.day.reel .s-lich{background:#fff}
+.lich button.day.sale{background:var(--orange);border-color:var(--orange)}
+.lich button.day.sale .n, .lich button.day.sale .tp, .lich button.day.sale .grp, .lich button.day.sale .st{color:#fff}
+.lich button.day.sale .fm{color:rgba(255,255,255,.85)}
+.lich button.day.sale .s-cho{background:#fff}
+.lich button.day.late{box-shadow:0 0 0 2px var(--late)}
+.lich button.day.late .st{color:var(--late)}
+.lich button.day.reel.late .st, .lich button.day.sale.late .st{color:#fff}
+.lich .list{display:none}
+.lich .keys{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:6px;font-size:13px;color:var(--ink)}
+.lich .keys > span{display:inline-flex;align-items:center;gap:8px}
+.lich .sw{width:22px;height:16px;border-radius:2px;border:1px solid var(--grey);background:#fff;display:inline-block;flex:none}
+.lich .sw.reel{background:var(--choco);border-color:var(--choco)}
+.lich .sw.sale{background:var(--orange);border-color:var(--orange)}
+.lich .sw.late{box-shadow:0 0 0 2px var(--late);border-color:#fff}
+.lich .sw.today{outline:2px solid var(--orange);outline-offset:2px}
+.lich .fbar{display:none;align-items:center;gap:12px;flex-wrap:wrap;background:#fff3ea;border-left:3px solid var(--orange);padding:12px 16px;margin-bottom:14px;font-size:14px;color:var(--choco)}
+.lich .fbar.on{display:flex}
+.lich .fbar b{font-weight:700}
+.lich .fbar button{margin-left:auto;border:1px solid var(--choco);background:#fff;color:var(--choco);padding:7px 12px;border-radius:2px;cursor:pointer;font:500 13px "Be Vietnam Pro"}
+.lich .fbar button:hover{background:var(--choco);color:#fff}
+.lich .cal.filtering .day:not(.hit){opacity:.35}
+.lich .cal.filtering button.day:not(.hit){opacity:.12;filter:grayscale(1)}
+.lich button.day.hit{box-shadow:0 0 0 3px var(--orange),0 12px 26px rgba(56,14,0,.18);transform:translateY(-3px);z-index:1}
+.lich button.day.hit.late{box-shadow:0 0 0 3px var(--late),0 12px 26px rgba(56,14,0,.18)}
+.lich .scrim{position:fixed;inset:0;background:rgba(45,8,0,.45);opacity:0;pointer-events:none;transition:opacity .2s;z-index:20}
+.lich .drawer{position:fixed;top:0;right:0;bottom:0;width:min(600px,100%);background:#fff;z-index:21;transform:translateX(100%);transition:transform .28s ease;display:flex;flex-direction:column;visibility:hidden}
+.lich.open .scrim{opacity:1;pointer-events:auto}
+.lich.open .drawer{transform:none;visibility:visible}
+.lich .dr-top{background:var(--choco);color:#fff;padding:22px 32px 26px;position:relative;overflow:hidden;flex:none}
+.lich .dr-top:before{content:"";position:absolute;inset:0;background:var(--nen) center/cover;opacity:.25}
+.lich .dr-top > *{position:relative}
+.lich .dr-nav{display:flex;align-items:center;gap:8px;margin-bottom:22px}
+.lich .dr-nav .label{margin-right:auto;color:var(--amber-light)}
+.lich .icon{width:34px;height:34px;border:1px solid rgba(255,255,255,.4);background:transparent;border-radius:2px;cursor:pointer;color:#fff;font-size:16px}
+.lich .icon:hover{background:#fff;color:var(--choco)}
+.lich .dr-meta{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;margin-bottom:10px}
+.lich .dr-meta .no{font:700 34px/1 "Philosopher",serif;color:var(--amber-light)}
+.lich .dr-meta .date{font-weight:600}
+.lich .pill{font:600 10px/1 "Josefin Sans";letter-spacing:.16em;text-transform:uppercase;border:1px solid rgba(255,255,255,.55);padding:6px 9px;border-radius:2px}
+.lich .dr-top h3{font:700 26px/1.28 "Philosopher",serif}
+.lich .dr-scroll{overflow-y:auto;flex:1}
+.lich .work{background:#faf7f5;border-bottom:1px solid var(--line);padding:20px 32px;display:grid;grid-template-columns:120px 1fr;gap:12px 16px;align-items:center}
+.lich .k{font:600 10px/1 "Josefin Sans";letter-spacing:.18em;text-transform:uppercase;color:var(--orange)}
+.lich .status{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--choco);font-size:14px}
+.lich .status.late{color:var(--late)}
+.lich .lnk{color:var(--choco);font-weight:500;text-decoration:underline;text-decoration-color:var(--amber);text-underline-offset:3px;word-break:break-all}
+.lich .none{color:var(--grey-dark);font-size:14px}
+.lich .tools{display:flex;gap:8px;padding:16px 32px;border-bottom:1px solid var(--line)}
+.lich .tbtn{border:1px solid var(--grey);background:#fff;color:var(--choco);font:500 13px/1 "Be Vietnam Pro";padding:10px 14px;border-radius:2px;cursor:pointer}
+.lich .tbtn:hover{border-color:var(--choco)}
+.lich .dr-body{padding:24px 32px 56px}
+.lich .post .k{display:block;margin:6px 0 12px}
+.lich .post .goal{font:italic 400 18px/1.5 "Philosopher",serif;color:var(--choco);margin-bottom:26px;padding-left:16px;border-left:2px solid var(--amber)}
+.lich .post ol{list-style:none;counter-reset:b}
+.lich .post li{counter-increment:b;position:relative;padding:12px 0 12px 40px;border-top:1px solid var(--line)}
+.lich .post li:before{content:counter(b,decimal-leading-zero);position:absolute;left:0;top:13px;font:700 14px/1.5 "Philosopher",serif;color:var(--amber)}
+.lich .note{background:#f4f2f3;padding:14px 18px;font-size:14px;margin-top:14px;border-radius:2px}
+.lich .note b{display:block;font:600 10px/1 "Josefin Sans";letter-spacing:.18em;text-transform:uppercase;color:var(--choco);margin-bottom:8px}
+.lich .toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:var(--choco);color:#fff;padding:12px 18px;border-radius:2px;font-size:14px;opacity:0;transition:.2s;z-index:30;pointer-events:none}
+.lich .toast.on{opacity:1;transform:translate(-50%,0)}
+.lich .footer{margin-top:96px;background:var(--choco);color:rgba(255,255,255,.7);font-size:13px}
+.lich .footer .wrap{display:flex;justify-content:space-between;align-items:center;padding:28px 32px}
+.lich .footer img{height:16px}
+.lich #print{display:none}
+@media (max-width:860px){.lich .wrap{padding:0 16px}
+.lich .cover .top{padding:20px 0}
+.lich .btn{padding:9px 12px;font-size:12px}
+.lich .btn.ghost-m{display:none}
+.lich .hero{grid-template-columns:1fr;gap:32px;padding:16px 0 40px}
+.lich .product{max-width:240px}
+.lich .cover h1{font-size:38px}
+.lich .cover:after{background:rgba(45,8,0,.82)}
+.lich .meta{grid-template-columns:1fr;gap:2px}
+.lich .meta dd{margin-bottom:10px}
+.lich .stats{grid-template-columns:1fr 1fr;gap:10px;padding:16px 0 10px}
+.lich .stat{padding:14px}
+.lich .stat .v{flex-direction:column;gap:6px}
+.lich .stat b{font-size:34px}
+.lich .sec{padding-top:56px}
+.lich .sec-head{grid-template-columns:1fr}
+.lich .sec-head h2{font-size:30px}
+.lich .sec-head p{text-align:left}
+.lich .mix-in{overflow-x:auto;padding:28px 16px}
+.lich .mtab{border-spacing:3px;font-size:12px}
+.lich .mtab td{height:40px;font-size:16px}
+.lich .mtab td:first-child{font-size:12px}
+.lich .mtab th span{display:none}
+.lich .filters{grid-template-columns:1fr;gap:8px}
+.lich .chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}
+.lich .chip{white-space:nowrap}
+.lich .cal{display:none}
+.lich .list{display:block}
+.lich .list .wkh{padding:28px 0 10px;border-bottom:1px solid var(--choco);margin-bottom:8px}
+.lich .list .wkh b{font:700 22px/1 "Philosopher",serif;color:var(--choco)}
+.lich .list .wkh span{font-size:12px;color:var(--orange);margin-left:8px}
+.lich .list .wkh p{font:italic 15px/1.5 "Philosopher",serif;margin-top:8px}
+.lich .list button{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--grey);border-radius:2px;margin-bottom:6px;padding:12px 14px;color:inherit;cursor:pointer}
+.lich .list button.reel{background:var(--choco);border-color:var(--choco);color:#fff}
+.lich .list button.sale{background:var(--orange);border-color:var(--orange);color:#fff}
+.lich .list button.late{box-shadow:0 0 0 2px var(--late)}
+.lich .list button.today{outline:2px solid var(--orange);outline-offset:2px}
+.lich .list button.dim{display:none}
+.lich .list.filtering button.hit{box-shadow:0 0 0 2px var(--orange)}
+.lich .keys{gap:8px 14px;font-size:12px}
+.lich .list .m{font-size:12px;opacity:.8;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.lich .list .tp{font:700 16px/1.35 "Philosopher",serif;margin-top:4px}
+.lich .list button:not(.reel):not(.sale) .tp{color:var(--choco)}
+.lich .dr-top, .lich .dr-body, .lich .work, .lich .tools{padding-left:20px;padding-right:20px}
+.lich .work{grid-template-columns:96px 1fr}
+.lich .footer .wrap{padding:22px 16px}
+
+}
+@media print{@page{size:A4;margin:16mm 14mm}
+.lich > *:not(#print){display:none !important}
+.lich #print{display:block;font-size:11pt;color:#000}
+.lich #print h1{font:700 22pt/1.2 "Philosopher",serif;color:var(--choco)}
+.lich #print .pm{color:#555;margin:6px 0 18px;font-size:10pt}
+.lich #print .pw{font:700 15pt "Philosopher",serif;color:var(--choco);border-bottom:1.5px solid var(--choco);padding:14px 0 4px;margin-top:8px;break-after:avoid}
+.lich #print .pwd{font-style:italic;color:#333;margin:4px 0 8px;font-size:10pt}
+.lich #print .pp{break-inside:avoid;border-bottom:1px solid #ddd;padding:10px 0}
+.lich #print .ph{font-size:9pt;color:#555}
+.lich #print .ph b{color:var(--orange)}
+.lich #print h3{font:700 13pt/1.3 "Philosopher",serif;color:var(--choco);margin:3px 0 4px}
+.lich #print ul{margin:4px 0 4px 18px}
+.lich #print li{margin-bottom:2px}
+.lich #print .pn{font-size:9.5pt;color:#333;margin-top:3px}
+.lich #print .pl{font-size:9pt;color:#555;margin-top:3px;word-break:break-all}
+
+}
+
+/* Chế độ nhúng (mục Fanpage & Instagram trong web IMC) */
+.lich .sync{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
+.lich .sync-links{display:inline-flex;gap:16px;margin-left:auto}
+.lich .sync-links a{color:#fff;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.5)}
+.lich .sync-links a:hover{border-color:#fff}
+.lich-embed{background:var(--bg)}
+@media print{.lich-embed > *{display:revert !important}.lich-embed #print{display:none !important}}
