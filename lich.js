@@ -9,6 +9,7 @@
   const safeUrl = u => /^https?:\/\//i.test(String(u||'').trim()) ? String(u).trim() : '';
   const STATUS = [['Chưa làm','s-chua'],['Đang làm','s-dang'],['Chờ duyệt','s-cho'],['Đã lên lịch','s-lich'],['Đã đăng','s-xong']];
   const GROUP_ORDER = ['KOC Reels','Sản phẩm','Hiệu quả & uy tín','Kênh chính hãng','Brand story','Ưu đãi'];
+  const isDone = p => p.status === 'Đã lên lịch' || p.status === 'Đã đăng'; // đã lên lịch cũng tính là hoàn thành
   const statusCls = s => (STATUS.find(x => x[0] === s) || [,'s-chua'])[1];
 
   /* ---------- Dữ liệu ---------- */
@@ -140,7 +141,7 @@
 
     const fmtDate = d => `${dd(d.getDate())}/${dd(d.getMonth()+1)}`;
     const kind = p => /reel/i.test(p.format) ? 'reel' : p.group === 'Ưu đãi' ? 'sale' : '';
-    const isLate = p => live && p.status !== 'Đã đăng' && p.date < today;
+    const isLate = p => live && !isDone(p) && p.date < today;
     const isToday = d => d.getTime() === today.getTime();
     const groupsOf = ps => [...GROUP_ORDER.filter(g => ps.some(p => p.group === g)), ...[...new Set(ps.map(p => p.group))].filter(g => !GROUP_ORDER.includes(g))];
     function statusHTML(p){
@@ -163,10 +164,10 @@
       }
       if (D.meta.bg) root.style.setProperty('--nen', `url("${D.meta.bg.replace(/"/g,'')}")`);
 
-      const done = P.filter(p => p.status === 'Đã đăng').length, late = P.filter(isLate).length;
+      const done = P.filter(isDone).length, late = P.filter(isLate).length;
       R.stats.innerHTML = `
         <div class="stat"><div class="v"><b>${P.length}</b><span>bài đăng</span></div></div>
-        <div class="stat"><div class="v"><b>${done}<small>/${P.length}</small></b><span>đã đăng${late ? ` · <strong>${late} trễ</strong>` : ''}</span></div><div class="bar"><i style="width:${P.length ? done/P.length*100 : 0}%"></i></div></div>
+        <div class="stat"><div class="v"><b>${done}<small>/${P.length}</small></b><span>hoàn thành${late ? ` · <strong>${late} trễ</strong>` : ''}</span></div><div class="bar"><i style="width:${P.length ? done/P.length*100 : 0}%"></i></div></div>
         <div class="stat"><div class="v"><b>${P.filter(p => p.group === 'KOC Reels').length}</b><span>KOC Reels</span></div></div>
         <div class="stat"><div class="v"><b>${G.length}</b><span>nhóm nội dung</span></div></div>`;
 
@@ -182,7 +183,7 @@
 
       R.keys.innerHTML = `<span class="label" style="font-size:10px">Chú thích</span>
         <span><i class="sw reel"></i>Reel (video)</span><span><i class="sw sale"></i>Ưu đãi</span><span><i class="sw"></i>Ảnh đơn / Bộ ảnh</span>
-        ${live ? '<span><i class="sw late"></i>Quá ngày đăng mà chưa đăng</span>' : ''}<span><i class="sw today"></i>Hôm nay</span>`;
+        ${live ? '<span><i class="sw late"></i>Quá ngày đăng mà chưa lên lịch / chưa đăng</span>' : ''}<span><i class="sw today"></i>Hôm nay</span>`;
 
       const start = new Date(P[0].date), end = P[P.length-1].date;
       const dow = ['CN','T2','T3','T4','T5','T6','T7'];
