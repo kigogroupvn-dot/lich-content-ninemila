@@ -8,14 +8,17 @@
 <title>Lịch content Ninemila</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Josefin+Sans:wght@400;600&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="lich.css">
+<script>/* luôn tải bản mới nhất, không dùng bản cũ trình duyệt lưu sẵn */
+const V = '?v=' + Date.now();
+document.write('<link rel="stylesheet" href="lich.css' + V + '">');</script>
 <style>html,body{margin:0;background:#fff}</style>
 </head>
 <body>
 <div id="lich"></div>
-<script src="config.js"></script>
-<script src="data.js"></script>
-<script src="lich.js"></script>
-<script>NinemilaLich.mount(document.getElementById('lich'));</script>
+<script>
+['config.js', 'data.js', 'lich.js'].reduce((p, f) => p.then(() => new Promise((ok, no) => {
+  const sc = document.createElement('script'); sc.src = f + V; sc.onload = ok; sc.onerror = no; document.head.appendChild(sc);
+})), Promise.resolve()).then(() => NinemilaLich.mount(document.getElementById('lich')));
+</script>
 </body>
 </html>
